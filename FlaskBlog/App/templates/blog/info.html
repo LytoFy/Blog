@@ -1,0 +1,291 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>首页_杨青个人博客 - 一个站在web前端设计之路的女技术员个人博客网站</title>
+<meta name="keywords" content="个人博客,杨青个人博客,个人博客模板,杨青" />
+<meta name="description" content="杨青个人博客，是一个站在web前端设计之路的女程序员个人网站，提供个人博客模板免费资源下载的个人原创网站。" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/static/blog/css/base.css" rel="stylesheet">
+<link href="/static/admin/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/blog/css/index.css" rel="stylesheet">
+<link href="/static/blog/css/info.css" rel="stylesheet">
+<link href="/static/blog/css/m.css" rel="stylesheet">
+<script src="/static/blog/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/blog/js/comm.js"></script>
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header class="header-navigation" id="header">
+  <nav>
+    <div class="logo"><a href="/">杨青个人博客</a></div>
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+    <ul id="starlist">
+      <li><a href="/index/" style="color:#000;">网站首页</a></li>
+      <li><a href="/share/">我的相册</a></li>
+      <li><a href="/list/0/">我的笔记</a></li>
+      <li><a href="/about/">关于我</a></li>
+      <li><a href="/gbook/">留言</a></li>
+      <li><a href="/info/0/" style="color:#f65a8a;">内容页</a></li>
+      <li><a href="/infopic/">信息照片墙</a></li>
+    </ul>
+  </nav>
+</header>
+<article>
+  <aside class="l_box">
+    <div class="search">
+      <form action="" method="get" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="fenlei">
+      <h2>文章分类</h2>
+      {% include 'blog/artnav.html' %}
+    </div>
+    <div class="tuijian">
+      <h2>站长推荐</h2>
+      <ul>
+        <li><a href="/">你是什么人便会遇上什么人</a></li>
+        <li><a href="/">帝国cms 列表页调用子栏目，没有则不显示栏目名称</a></li>
+        <li><a href="/">第二届 优秀个人博客模板比赛参选活动</a></li>
+        <li><a href="/">个人博客模板《绅士》后台管理</a></li>
+        <li><a href="/">你是什么人便会遇上什么人</a></li>
+        <li><a href="/">帝国cms 列表页调用子栏目，没有则不显示栏目名称</a></li>
+        <li><a href="/">第二届 优秀个人博客模板比赛参选活动</a></li>
+        <li><a href="/">个人博客模板《绅士》后台管理</a></li>
+      </ul>
+    </div>
+    <div class="tuijian">
+      <h2>点击排行</h2>
+      <ul>
+        <li><a href="/">你是什么人便会遇上什么人</a></li>
+        <li><a href="/">帝国cms 列表页调用子栏目，没有则不显示栏目名称</a></li>
+        <li><a href="/">第二届 优秀个人博客模板比赛参选活动</a></li>
+        <li><a href="/">个人博客模板《绅士》后台管理</a></li>
+        <li><a href="/">你是什么人便会遇上什么人</a></li>
+        <li><a href="/">帝国cms 列表页调用子栏目，没有则不显示栏目名称</a></li>
+        <li><a href="/">第二届 优秀个人博客模板比赛参选活动</a></li>
+        <li><a href="/">个人博客模板《绅士》后台管理</a></li>
+      </ul>
+    </div>
+    <div class="cloud">
+      <h2>标签云</h2>
+      <ul>
+        <a href="/">陌上花开</a> <a href="/">校园生活</a> <a href="/">html5</a> <a href="/">SumSung</a> <a href="/">青春</a> <a href="/">温暖</a> <a href="/">阳光</a> <a href="/">三星</a><a href="/">索尼</a> <a href="/">华维荣耀</a> <a href="/">三星</a> <a href="/">索尼</a>
+      </ul>
+    </div>
+    <div class="guanzhu">
+      <h2>关注我 么么哒</h2>
+      <ul>
+        <img src="/static/blog/images/wx.jpg">
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <div class="infosbox">
+      <div class="newsview">
+        <h3 class="news_title">{{ art.items[0].name }}</h3>
+        <div class="bloginfo">
+          <ul>
+            <li class="author">作者：<a href="/">杨青</a></li>
+            <li class="lmname"><a href="/">{{ cate_name }}</a></li>
+            <li class="timer">时间：{{ art.items[0].date }}</li>
+            <li class="view">{{ art.items[0].read_num }}人已阅读</li>
+          </ul>
+        </div>
+        <div class="tags"><a href="/" target="_blank">{{ art.items[0].label}}</a>
+        <div class="news_about"><strong>简介</strong>{{ art.items[0].info }}</div>
+        <div class="news_con"> {{ art.items[0].text |safe }}
+          &nbsp; </div>
+      </div>
+      <div class="share">
+          <a href="javascript:;" style="width: 160px;height: 40px;display: block;margin-left: 200px;" id="praise"><p class="diggit" >很赞哦！(<b id="diggnum" class="pra_num">{{ art.items[0].praise_num }}</b>)</p>
+        </a>
+      </div>
+      <div class="nextinfo">
+          {% if  art.has_prev %}
+              <p>上一篇：<a href="/info/{{ art.prev().items[0].id }}">{{ art.prev().items[0].name }}</a></p>
+          {% else %}
+              <p>上一篇：<a href="/list/0/">返回列表</a></p>
+          {% endif %}
+          {% if  art.has_next %}
+              <p>下一篇：<a href="/info/{{ art.next().items[0].id }}">{{ art.next().items[0].name }}</a></p>
+          {% else %}
+              <p>下一篇：<a href="/list/0/">返回列表</a></p>
+          {% endif %}
+      </div>
+      <div class="news_pl">
+        <h2>文章评论</h2>
+        <div class="gbko"> 
+          <script src="/e/pl/more/?classid=77&amp;id=106&amp;num=20"></script>
+        <div class="fa_say">
+            {% for com in comms %}
+                <div class="fb user_div" >
+            <ul>
+              <p class="fbtime" ><span style="width: 140px;">{{ com.fa_com.date }}</span>{{ com.fa_com.name }}</p>
+
+                <input name="imageField" userid="{{ com.fa_com.id }}" facode="0" class="btn btn-primary user_btn"  type="submit" value="评论他" style="float: right;">
+                <p class="fbinfo" >{{ com.fa_com.info }}</p>
+            </ul>
+               <textarea name="saytext" rows="3" cols="78" placeholder="输入文字..." class="user_say" style="display: none" ></textarea>
+
+                    <div class="son_say" style="position: relative;left: 70px;width: 550px;">
+                    {% for son_com in com.son_com %}
+
+                                <div class="fb user_div" >
+                         <ul>
+                             <p class="fbtime" ><span style="width: 140px;">{{ son_com.date }}</span>{{ son_com.name }}<m style="color: #00a0e9"> 回复了 </m>{{ son_com.toname }}</p>
+
+                                 <input name="imageField" userid="{{ com.fa_com.id }}" facode="1" class="btn btn-primary user_btn"  type="submit" value="评论他" style="float: right;">
+                            <p class="fbinfo" >{{ son_com.info }}</p>
+                         </ul>
+                            <textarea name="saytext" rows="3" cols="70" placeholder="输入文字..." class="user_say" style="display: none" ></textarea>
+                                 </div>
+
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+             </div>
+
+
+
+            <hr>
+            <textarea name="saytext" rows="6" id="saytext" placeholder="输入文字..."></textarea>
+            <input name="imageField" class="btn btn-primary" id="art_btn" type="button" value="评论文章">
+
+            <script>
+                $(window).click(function () {
+
+                    for (let i=0;i<$('.user_say').length;i++){
+                        if($('.user_say').eq(i).val()==''){
+                            $('.user_say').eq(i).hide()
+                            $('.user_say').eq(i).parent('.user_div').find('.user_btn').val('评论他')
+                        }
+                    }
+                    {#return false#}
+
+                    });
+
+                $('.user_say').click(function () {
+                    return false
+                })
+                 $('.user_btn').click(function () {
+                     for (let i=0;i<$('.user_say').length;i++){
+                        if($('.user_say').eq(i).val()==''){
+                            $('.user_say').eq(i).hide()
+                            $('.user_say').eq(i).parent('.user_div').find('.user_btn').val('评论他')
+                        }
+                    }
+                    $(this).parents('.user_div').first().children('.user_say').show()
+                     $(this).val('提交')
+
+                     var that = this
+                     artval=$(this).parents('.user_div').children('.user_say').val()
+                     if (artval!=''){
+                         userid=$(this).attr('userid');
+                         facode=$(this).attr('facode')
+                            art_id={{ art.items[0].id }}
+                         $.post('/addcomment/',{'userid':userid,'artval':artval,'art_id':art_id},function (da) {
+                             if(da.code==1){
+                             if (facode==1){
+                                $(that).parents('.son_say').append('<div class="fb user_div" ><ul><p class="fbtime" ><span style="width: 140px;">' + da.com.date + '</span>'+ da.com.name+'<m style="color: #00a0e9"> 回复了 </m>'+ da.com.toname  +'</p><input name="imageField" userid="'+  da.com.fa_id  +'" class="btn btn-primary user_btn"  type="submit" value="评论他" style="float: right;"><p class="fbinfo" >'+ da.com.info +'</p></ul><textarea name="saytext" rows="3" cols="78" placeholder="输入文字..." class="user_say" style="display: none" ></textarea></div>')
+                             }else{
+                                $(that).parents('.user_div').find('.son_say').append('<div class="fb user_div" ><ul><p class="fbtime" ><span style="width: 140px;">' + da.com.date + '</span>'+ da.com.name+'<m style="color: #00a0e9"> 回复了 </m>'+ da.com.toname  +'</p><input name="imageField" userid="'+  da.com.fa_id  +'" class="btn btn-primary user_btn"  type="submit" value="评论他" style="float: right;"><p class="fbinfo" >'+ da.com.info +'</p></ul><textarea name="saytext" rows="3" cols="78" placeholder="输入文字..." class="user_say" style="display: none" ></textarea></div>')
+                             }
+                            $(that).parents('.user_div').children('.user_say').hide();
+                             $(that).parents('.user_div').children('.user_say').val('');
+                             $(that).val('评论他')
+                             }else{
+
+                                 alert('五分钟评论一次')
+                             }
+                         })
+                     }
+                    return false
+                });
+                $('#art_btn').click(function () {
+                     {#$(this).val('提交')#}
+                     artval=$('#saytext').val()
+                     var that = this
+                     if (artval!=''){
+                         art_id={{ art.items[0].id }}
+                         $.get('/addcomment/',{'art_id':art_id,'artval':artval,},function (da) {
+                              if(da.code==1) {
+
+                                  $('.fa_say').append('<div class="fb user_div" ><ul><p class="fbtime" ><span style="width: 140px;">' + da.com.date + '</span>' + da.com.name + '</p><input name="imageField" userid="' + da.com.id + '" class="btn btn-primary user_btn" type="submit" value="评论他" style="float: right;"> <p class="fbinfo" >' + da.com.info + '</p></ul><textarea name="saytext" rows="3" cols="78" placeholder="输入文字..." class="user_say" style="display: none" ></textarea><div class="son_say" style="position: relative;left: 70px;width: 550px;"></div></div>')
+                                  {#$(that).val('评论文章')#}
+                                  $('#saytext').val('')
+                              }else{
+
+                                 alert('五分钟评论一次')
+                             }
+                         })
+                     }
+                 })
+
+            </script>
+
+
+
+
+
+
+
+            {#          <script>#}
+{#		  function CheckPl(obj)#}
+{#		  {#}
+{#		  if(obj.saytext.value=="")#}
+{#		  {#}
+{#		  alert("您没什么话要说吗？");#}
+{#		  obj.saytext.focus();#}
+{#		  return false;#}
+{#		  }#}
+{#		  return true;#}
+{#		  }#}
+{#		  </script>#}
+{#          <form action="/e/pl/doaction.php" method="post" name="saypl" id="saypl" onsubmit="return CheckPl(document.saypl)">#}
+{#            <div id="plpost">#}
+{#              <p class="saying"><span><a href="/e/pl/?classid=77&amp;id=106">共有<script type="text/javascript" src="/e/public/ViewClick/?classid=77&amp;id=106&amp;down=2"></script>2条评论</a></span>来说两句吧...</p>#}
+{#              <p class="yname"><span>用户名:</span>#}
+{#                <input name="username" type="text" class="inputText" id="username" value="" size="16">#}
+{#              </p>#}
+{#              <p class="yzm"><span>验证码:</span>#}
+{#                <input name="key" type="text" class="inputText" size="16">#}
+{#              </p>#}
+{#              <input name="nomember" type="hidden" id="nomember" value="1" checked="checked">#}
+{#              <textarea name="saytext" rows="6" id="saytext"></textarea>#}
+{#<input name="imageField" type="submit" value="提交">#}
+{#              <input name="id" type="hidden" id="id" value="106">#}
+{#              <input name="classid" type="hidden" id="classid" value="77">#}
+{#              <input name="enews" type="hidden" id="enews" value="AddPl">#}
+{#              <input name="repid" type="hidden" id="repid" value="0">#}
+{#              <input type="hidden" name="ecmsfrom" value="/joke/talk/2018-07-23/106.html">#}
+{#            </div>#}
+{#          </form>#}
+        </div>
+      </div>
+    </div>
+  </main>
+</article>
+<footer>
+  <p>Design by <a href="http://www.yangqq.com" target="_blank">杨青个人博客</a> <a href="/">蜀ICP备11002373号-1</a></p>
+</footer>
+<a href="#" class="cd-top">Top</a>
+<script>
+    $('#praise').click(function () {
+        $.post('/info/{{ art.items[0].id }}/',{},function(data) {
+            $('.pra_num').html(data.pra_num)
+        })
+    });
+
+
+</script>
+</body>
+</html>
