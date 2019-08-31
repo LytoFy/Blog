@@ -1,0 +1,6 @@
+<ul>
+    {% for da in data %}
+        <li><a href="{{ url_for('blog.index',id=da.cate.id) }}">{{ da.cate.name }}（{{ da.num }}）</a></li>
+    {% endfor %}
+
+</ul>
